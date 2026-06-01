@@ -1,0 +1,2582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ford Tech – Especialistas en vehículos Ford en Cabudare, Lara, Venezuela. Diagnóstico computarizado, mecánica especializada y mantenimiento premium.">
+<meta name="keywords" content="taller Ford Cabudare, servicio Ford Lara, diagnóstico Ford Venezuela, mecánica Ford especializada">
+<meta property="og:title" content="Ford Tech – Los Reyes del Servicio Ford en Lara">
+<meta property="og:description" content="Centro especializado exclusivamente en vehículos Ford. Diagnóstico avanzado, mecánica especializada y tecnología de última generación.">
+<meta property="og:type" content="website">
+<title>Ford Tech – Especialistas en Vehículos Ford | Cabudare, Lara</title>
+<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+<link rel="dns-prefetch" href="https://res.cloudinary.com">
+<!-- Preload hero video poster frame -->
+<link rel="preload" as="image" href="https://res.cloudinary.com/dvvuwigmy/video/upload/so_0,q_auto:good,f_jpg,w_1280/v1780357027/insta_video_92168_rq2gdf.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ford-blue: #003499;
+    --ford-blue-light: #0057d8;
+    --ford-blue-glow: #1a6eff;
+    --ford-blue-dim: rgba(0, 52, 153, 0.15);
+    --black: #050810;
+    --black-2: #0a0d16;
+    --black-3: #0f1320;
+    --gray-dark: #1a1f2e;
+    --gray-mid: #2a3045;
+    --gray-light: #3d4560;
+    --text-primary: #f0f4ff;
+    --text-secondary: #8a9bc8;
+    --text-muted: #4d5a7c;
+    --border: rgba(0, 87, 216, 0.2);
+    --border-glow: rgba(26, 110, 255, 0.4);
+    --font-display: 'Orbitron', sans-serif;
+    --font-heading: 'Rajdhani', sans-serif;
+    --font-body: 'Exo 2', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--ford-blue-glow);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.2s, height 0.2s, opacity 0.2s;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(26, 110, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease, width 0.3s, height 0.3s;
+  }
+
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 8, 16, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s ease, padding 0.3s ease, transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    letter-spacing: 3px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .nav-logo span { color: var(--ford-blue-glow); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--ford-blue-glow);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--ford-blue-glow); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--ford-blue);
+    color: white;
+    padding: 0.6rem 1.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border: 1px solid var(--ford-blue-glow);
+    text-decoration: none;
+    transition: all 0.3s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .nav-cta:hover {
+    background: var(--ford-blue-glow);
+    box-shadow: 0 0 25px rgba(26, 110, 255, 0.5);
+  }
+
+  /* Hero video */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .hero-video.loaded { opacity: 1; }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(5,8,16,0.55) 0%, rgba(5,8,16,0.45) 40%, rgba(5,8,16,0.75) 75%, rgba(5,8,16,0.97) 100%),
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0, 52, 153, 0.4) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 30%, rgba(0, 87, 216, 0.1) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background-image:
+      linear-gradient(rgba(0, 87, 216, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 87, 216, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridPulse 8s ease-in-out infinite;
+  }
+  @keyframes gridPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+  .hero-scan {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background: linear-gradient(0deg, transparent 0%, rgba(0, 87, 216, 0.03) 50%, transparent 100%);
+    animation: scanLine 6s linear infinite;
+  }
+  @keyframes scanLine {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 2rem;
+    padding-top: 5rem;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 87, 216, 0.15);
+    border: 1px solid rgba(0, 87, 216, 0.4);
+    padding: 0.4rem 1.2rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ford-blue-glow);
+    margin-bottom: 2rem;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    animation: fadeInDown 0.8s ease both;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--ford-blue-glow);
+    border-radius: 50%;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.9s ease 0.2s both;
+  }
+  .hero-title .accent { color: var(--ford-blue-glow); }
+  .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    animation: fadeInUp 1s ease 0.4s both;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease 0.6s both;
+    margin-bottom: 4rem;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--ford-blue);
+    color: white;
+    padding: 1rem 2rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--ford-blue-glow);
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--ford-blue-glow);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .btn-primary:hover::before { transform: translateX(0); }
+  .btn-primary:hover { box-shadow: 0 0 30px rgba(26, 110, 255, 0.6); }
+  .btn-primary span { position: relative; z-index: 1; }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: transparent;
+    color: var(--text-primary);
+    padding: 1rem 2rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(138, 155, 200, 0.3);
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    transition: all 0.3s;
+  }
+  .btn-secondary:hover {
+    border-color: var(--ford-blue-glow);
+    color: var(--ford-blue-glow);
+    box-shadow: 0 0 20px rgba(26, 110, 255, 0.2);
+  }
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease 0.8s both;
+  }
+  .hero-stat {
+    text-align: center;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    position: relative;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .hero-stat::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ford-blue-glow), transparent);
+  }
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--ford-blue-glow);
+    letter-spacing: 2px;
+    display: block;
+  }
+  .hero-stat-label {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+  /* Car silhouette */
+  .hero-car {
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 900px;
+    opacity: 0.06;
+    filter: blur(0.5px);
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Sections */
+  section { padding: 6rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--ford-blue-glow);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+  .section-title .accent { color: var(--ford-blue-glow); }
+  .section-desc {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 550px;
+  }
+
+  /* Divider */
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--ford-blue), var(--ford-blue-glow));
+    margin: 1.5rem 0;
+  }
+
+  /* Authority section */
+  .authority {
+    background: var(--black-2);
+    position: relative;
+    overflow: hidden;
+  }
+  .authority::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356007/IMG_7173_q6xydh.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .authority > * { position: relative; z-index: 1; }
+  .authority::before {
+    content: 'FORD';
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-size: clamp(8rem, 20vw, 18rem);
+    font-weight: 900;
+    color: rgba(0, 87, 216, 0.04);
+    letter-spacing: 10px;
+    pointer-events: none;
+    user-select: none;
+  }
+  .authority-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  @media(max-width: 768px) {
+    .authority-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  .authority-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+  }
+  @media(max-width: 480px) {
+    .authority-features { grid-template-columns: 1fr; }
+  }
+  .auth-feature {
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--ford-blue);
+    transition: all 0.3s;
+  }
+  .auth-feature:hover {
+    border-left-color: var(--ford-blue-glow);
+    background: rgba(0, 87, 216, 0.06);
+    transform: translateX(4px);
+  }
+  .auth-feature-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .auth-feature h4 {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+  }
+  .auth-feature p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .authority-visual {
+    position: relative;
+  }
+  .authority-card {
+    background: var(--gray-dark);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+  .authority-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--ford-blue), var(--ford-blue-glow), transparent);
+  }
+  .authority-card-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--ford-blue-glow);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .authority-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .authority-stat-row:last-child { border-bottom: none; }
+  .authority-stat-name {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+  .authority-stat-val {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ford-blue-glow);
+    letter-spacing: 1px;
+  }
+  .authority-bar-wrap {
+    height: 4px;
+    background: rgba(255,255,255,0.05);
+    margin-top: 0.4rem;
+    border-radius: 2px;
+  }
+  .authority-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--ford-blue), var(--ford-blue-glow));
+    border-radius: 2px;
+    transition: width 1.5s ease;
+  }
+
+  /* Services */
+  .services {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+  .services::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356002/IMG_7171_opgxkk.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .services > * { position: relative; z-index: 1; }
+  .services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .services-header .divider { margin: 1.5rem auto; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+    cursor: default;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px; height: 0;
+    background: linear-gradient(180deg, var(--ford-blue-glow), var(--ford-blue));
+    transition: height 0.4s;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 87, 216, 0.08) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .service-card:hover { border-color: var(--ford-blue-light); transform: translateY(-4px); }
+  .service-card:hover::before { height: 100%; }
+  .service-card:hover::after { opacity: 1; }
+  .service-num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgba(0, 87, 216, 0.15);
+    letter-spacing: 2px;
+    position: absolute;
+    top: 1rem; right: 1.5rem;
+    transition: color 0.3s;
+  }
+  .service-card:hover .service-num { color: rgba(26, 110, 255, 0.25); }
+  .service-icon {
+    width: 50px; height: 50px;
+    background: rgba(0, 87, 216, 0.1);
+    border: 1px solid rgba(0, 87, 216, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: all 0.3s;
+  }
+  .service-card:hover .service-icon {
+    background: rgba(0, 87, 216, 0.2);
+    border-color: var(--ford-blue-glow);
+  }
+  .service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+    position: relative;
+  }
+  .service-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    position: relative;
+  }
+  .service-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ford-blue-glow);
+    background: rgba(0, 87, 216, 0.1);
+    padding: 0.25rem 0.8rem;
+    border: 1px solid rgba(0, 87, 216, 0.3);
+  }
+
+  /* Vehicles */
+  .vehicles {
+    background: var(--black-2);
+    overflow: hidden;
+    position: relative;
+  }
+  .vehicles::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356005/IMG_7172_bea6ku.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .vehicles > * { position: relative; z-index: 1; }
+  .vehicles-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .vehicles-header .divider { margin: 1.5rem auto; }
+  .vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .vehicle-card {
+    background: var(--gray-dark);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+  .vehicle-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--ford-blue), transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+  .vehicle-card:hover { border-color: var(--ford-blue-light); transform: translateY(-4px); }
+  .vehicle-card:hover::before { transform: scaleX(1); }
+  .vehicle-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .vehicle-name {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+  }
+  .vehicle-tag {
+    font-size: 0.7rem;
+    color: var(--ford-blue-glow);
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Process */
+  .process {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+  .process::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356002/IMG_7174_fu4a4v.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .process > * { position: relative; z-index: 1; }
+  .process-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .process-header .divider { margin: 1.5rem auto; }
+  .process-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--ford-blue), var(--ford-blue-glow), var(--ford-blue), transparent);
+    transform: translateX(-50%);
+  }
+  @media(max-width: 768px) {
+    .process-timeline::before { left: 30px; }
+  }
+  .process-step {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  .process-step:nth-child(even) { flex-direction: row-reverse; }
+  @media(max-width: 768px) {
+    .process-step, .process-step:nth-child(even) {
+      flex-direction: row;
+      padding-left: 70px;
+    }
+  }
+  .process-content {
+    flex: 1;
+    padding: 1.5rem;
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    transition: all 0.3s;
+  }
+  .process-content:hover { border-color: var(--ford-blue-light); }
+  .process-content::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--ford-blue-glow), transparent);
+  }
+  .process-num {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; height: 50px;
+    background: var(--ford-blue);
+    border: 2px solid var(--ford-blue-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1px;
+    z-index: 2;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  @media(max-width: 768px) {
+    .process-num {
+      left: 30px;
+      transform: translateX(-50%);
+    }
+  }
+  .process-placeholder { flex: 1; }
+  @media(max-width: 768px) {
+    .process-placeholder { display: none; }
+  }
+  .process-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  .process-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* Technology */
+  .technology {
+    background: var(--black-2);
+    position: relative;
+    overflow: hidden;
+  }
+  .technology::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 60% 50%, rgba(0, 52, 153, 0.15) 0%, transparent 70%);
+    z-index: 1;
+  }
+  .technology::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356007/IMG_7173_q6xydh.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .technology > * { position: relative; z-index: 2; }
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  @media(max-width: 768px) {
+    .tech-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  .tech-features { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+  .tech-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .tech-item:hover { border-color: var(--ford-blue-glow); background: rgba(0, 87, 216, 0.05); }
+  .tech-item-dot {
+    width: 8px; height: 8px;
+    background: var(--ford-blue-glow);
+    border-radius: 50%;
+    margin-top: 0.35rem;
+    flex-shrink: 0;
+    animation: blink 2s ease-in-out infinite;
+  }
+  .tech-item h4 {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+  .tech-item p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+  .tech-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .tech-panel {
+    background: var(--gray-dark);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .tech-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--ford-blue), var(--ford-blue-glow));
+  }
+  .tech-panel-label {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .tech-panel-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .tech-status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0;
+    font-size: 0.8rem;
+  }
+  .tech-status-name { color: var(--text-secondary); font-family: var(--font-heading); font-weight: 600; letter-spacing: 1px; }
+  .tech-status-ok {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #00c853;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .tech-status-ok::before {
+    content: ''; width: 6px; height: 6px;
+    background: #00c853; border-radius: 50%;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    background: var(--black);
+  }
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .testimonials-header .divider { margin: 1.5rem auto; }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .testimonial-card {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+  }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem; right: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: rgba(0, 87, 216, 0.15);
+    line-height: 1;
+  }
+  .testimonial-card:hover { border-color: var(--ford-blue-glow); }
+  .stars { color: #f5a623; font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 2px; }
+  .testimonial-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .author-avatar {
+    width: 38px; height: 38px;
+    background: var(--ford-blue);
+    border: 1px solid var(--ford-blue-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  }
+  .author-name {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+  }
+  .author-vehicle {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Gallery */
+  .gallery {
+    background: var(--black-2);
+  }
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .gallery-header .divider { margin: 1.5rem auto; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 0.8rem;
+  }
+  @media(max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media(max-width: 500px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--gray-dark);
+    border: 1px solid var(--border);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+  .gallery-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: unset;
+  }
+  .gallery-item:hover { border-color: var(--ford-blue-glow); }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-item:hover .gallery-content { transform: translateY(0); }
+  .gallery-item-bg {
+    position: absolute; inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    opacity: 0.15;
+    transition: transform 0.4s, opacity 0.4s;
+  }
+  .gallery-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+  .gallery-item:hover .gallery-photo { transform: scale(1.06); }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0, 52, 153, 0.7);
+    opacity: 0;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-content {
+    text-align: center;
+    padding: 1rem;
+    transform: translateY(10px);
+    transition: transform 0.4s;
+  }
+  .gallery-content h4 {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 0.3rem;
+  }
+  .gallery-content p {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.7);
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .gallery-label {
+    position: absolute;
+    bottom: 0.8rem; left: 0.8rem;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: rgba(5, 8, 16, 0.8);
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 80% at 50% 50%, rgba(0, 52, 153, 0.2) 0%, transparent 70%),
+      linear-gradient(0deg, var(--black-2) 0%, var(--black) 50%, var(--black-2) 100%);
+  }
+  .cta-inner {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+  .cta-inner .section-title { font-size: clamp(2rem, 5vw, 4rem); }
+  .cta-inner .section-desc { margin: 0 auto 3rem; max-width: 500px; font-size: 1rem; }
+  .cta-btn-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--ford-blue);
+    color: white;
+    padding: 1.3rem 3rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--ford-blue-glow);
+    clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-btn-large::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--ford-blue-glow);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .cta-btn-large:hover::before { transform: translateX(0); }
+  .cta-btn-large:hover { box-shadow: 0 0 50px rgba(26, 110, 255, 0.7); }
+  .cta-btn-large span { position: relative; z-index: 1; }
+  .cta-lines {
+    position: absolute;
+    left: 0; right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .cta-line { height: 1px; flex: 1; background: linear-gradient(90deg, transparent, var(--ford-blue-glow)); }
+  .cta-line-r { background: linear-gradient(90deg, var(--ford-blue-glow), transparent); }
+
+  /* Footer */
+  footer {
+    background: var(--black-3);
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem 1.5rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+  }
+  @media(max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+  @media(max-width: 500px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  .footer-brand { }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    letter-spacing: 4px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .footer-logo span { color: var(--ford-blue-glow); }
+  .footer-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 260px;
+  }
+  .footer-socials { display: flex; gap: 0.8rem; }
+  .footer-social {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  }
+  .footer-social:hover {
+    border-color: var(--ford-blue-glow);
+    color: var(--ford-blue-glow);
+    background: rgba(0, 87, 216, 0.1);
+  }
+  .footer-col h5 {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ford-blue-glow);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li {
+    margin-bottom: 0.5rem;
+  }
+  .footer-col ul li a, .footer-col ul li span {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: var(--font-body);
+  }
+  .footer-col ul li a:hover { color: var(--ford-blue-glow); }
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+  }
+  .footer-tag {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ford-blue);
+  }
+
+  /* Scroll animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--ford-blue); border-radius: 2px; }
+
+  /* Floating WhatsApp */
+  /* ── WhatsApp flotante – círculo animado ── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: rgba(5, 8, 16, 0.6);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1.5px solid rgba(37, 211, 102, 0.4);
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0.4),
+      0 8px 28px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.07);
+    transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), border-color 0.3s, box-shadow 0.3s;
+    animation: waPingBorder 2.8s ease-in-out infinite;
+    overflow: visible;
+  }
+  /* anillo exterior pulsante */
+  .whatsapp-float::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px solid rgba(37, 211, 102, 0.25);
+    animation: waRingPulse 2.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  /* segundo anillo más grande */
+  .whatsapp-float::after {
+    content: '';
+    position: absolute;
+    inset: -13px;
+    border-radius: 50%;
+    border: 1px solid rgba(37, 211, 102, 0.1);
+    animation: waRingPulse 2.8s ease-in-out 0.35s infinite;
+    pointer-events: none;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.12);
+    border-color: rgba(37, 211, 102, 0.75);
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,0),
+      0 10px 35px rgba(0,0,0,0.55),
+      0 0 22px rgba(37,211,102,0.22),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .whatsapp-float svg { position: relative; z-index: 1; filter: drop-shadow(0 0 6px rgba(37,211,102,0.5)); }
+
+  @keyframes waPingBorder {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4), 0 8px 28px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.07); }
+    50%       { box-shadow: 0 0 0 6px rgba(37,211,102,0), 0 8px 28px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.07); }
+  }
+  @keyframes waRingPulse {
+    0%   { transform: scale(1);    opacity: 0.6; }
+    60%  { transform: scale(1.25); opacity: 0;   }
+    100% { transform: scale(1.25); opacity: 0;   }
+  }
+
+  @media(max-width: 768px) {
+    .whatsapp-float { bottom: 1.4rem; right: 1.4rem; width: 52px; height: 52px; }
+  }
+
+  /* ── Hamburger button ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 1001;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ── Mobile drawer ── */
+  .nav-drawer {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: rgba(5, 8, 16, 0.97);
+    backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .nav-drawer.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .nav-drawer a {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-drawer a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--ford-blue-glow);
+    transition: width 0.3s;
+  }
+  .nav-drawer a:hover, .nav-drawer a:active { color: var(--ford-blue-glow); }
+  .nav-drawer a:hover::after { width: 100%; }
+  .nav-drawer-cta {
+    margin-top: 1rem;
+    background: var(--ford-blue) !important;
+    color: white !important;
+    padding: 0.9rem 2.5rem;
+    border: 1px solid var(--ford-blue-glow);
+    font-size: 0.9rem !important;
+    letter-spacing: 3px !important;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  }
+
+  /* ── Mobile optimizations ── */
+  @media(max-width: 768px) {
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+
+    nav { padding: 0.85rem 1.2rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+
+    section { padding: 3.5rem 1.2rem; }
+
+    /* Hero */
+    .hero-content { padding: 0 1rem; padding-top: 5rem; }
+    .hero-buttons { flex-direction: column; align-items: center; gap: 0.75rem; }
+    .hero-buttons a { width: 100%; max-width: 300px; justify-content: center; }
+    .hero-stats { gap: 0.8rem; }
+    .hero-stat { padding: 0.7rem 1rem; }
+    .hero-stat-num { font-size: 1.2rem; }
+
+    /* Authority / story */
+    .story-block { gap: 1rem; }
+    .story-icon { width: 40px; height: 40px; font-size: 1.1rem; }
+    .story-content { padding-bottom: 2rem; }
+    .story-content h3 { font-size: 1rem; }
+    .story-content p { font-size: 0.85rem; }
+    .story-stats { flex-wrap: wrap; gap: 1rem; padding: 1.5rem 1rem; }
+    .story-stat-divider { display: none; }
+    .story-stat { min-width: calc(50% - 0.5rem); flex: none; }
+    .story-stat-num { font-size: 1.4rem; }
+    .story-video-frame { max-width: 100%; }
+
+    /* Services */
+    .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+    /* Vehicles */
+    .vehicles-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .vehicle-card { padding: 1rem; }
+
+    /* Process */
+    .process-timeline::before { display: none; }
+    .process-step,
+    .process-step:nth-child(even) { flex-direction: column; gap: 0.75rem; padding-left: 0; }
+    .process-num { position: static; transform: none; width: 38px; height: 38px; font-size: 0.85rem; align-self: flex-start; }
+    .process-placeholder { display: none; }
+    .process-content { clip-path: none; }
+
+    /* Technology */
+    .tech-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+    /* Gallery */
+    .gallery-grid { grid-template-columns: repeat(2,1fr); }
+    .gallery-item.large { grid-column: span 2; grid-row: span 1; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; }
+
+    /* CTA section */
+    .cta-inner { padding: 3rem 1.2rem; }
+  }
+
+  @media(max-width: 480px) {
+    .hero-stats { flex-direction: column; align-items: center; }
+    .hero-stat { width: 100%; max-width: 240px; }
+    .vehicles-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .story-stat { min-width: 100%; }
+  }
+
+  /* ── Story / Historia section ── */
+  .story-timeline {
+    max-width: 820px;
+    margin: 0 auto 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .story-block {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .story-icon-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 0.2rem;
+  }
+  .story-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(0, 87, 216, 0.12);
+    border: 1px solid rgba(0, 87, 216, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .story-line {
+    width: 1px;
+    flex: 1;
+    min-height: 3rem;
+    background: linear-gradient(180deg, rgba(0,87,216,0.5), rgba(0,87,216,0.15));
+    margin: 0.4rem 0;
+  }
+  .story-line-last {
+    background: linear-gradient(180deg, rgba(0,87,216,0.15), transparent);
+  }
+  .story-content {
+    padding: 0 0 3rem;
+    flex: 1;
+  }
+  .story-tag {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ford-blue-glow);
+    background: rgba(0,87,216,0.1);
+    border: 1px solid rgba(0,87,216,0.25);
+    padding: 0.2rem 0.7rem;
+    display: inline-block;
+    margin-bottom: 0.7rem;
+  }
+  .story-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 0.7rem;
+    line-height: 1.2;
+  }
+  .story-content p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    font-weight: 300;
+    max-width: 640px;
+  }
+
+  /* Story stats bar */
+  .story-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    padding: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .story-stats::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ford-blue-glow), transparent);
+  }
+  .story-stat {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    padding: 0.5rem 1rem;
+  }
+  .story-stat-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--ford-blue-glow);
+    letter-spacing: 2px;
+    display: block;
+  }
+  .story-stat-label {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.3rem;
+  }
+  .story-stat-divider {
+    width: 1px;
+    height: 3rem;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  /* Story video */
+  .story-video-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .story-video-label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+  }
+  .story-video-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--ford-blue-glow);
+    border-radius: 50%;
+    animation: blink 1.5s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  .story-video-frame {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border: 1px solid rgba(0,87,216,0.35);
+    background: var(--black);
+  }
+  .story-video-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(5,8,16,0.25) 0%, transparent 20%, transparent 80%, rgba(5,8,16,0.3) 100%),
+      linear-gradient(90deg, rgba(5,8,16,0.15) 0%, transparent 10%, transparent 90%, rgba(5,8,16,0.15) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .story-video-corners {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: var(--ford-blue-glow);
+    border-style: solid;
+    opacity: 0.8;
+  }
+  .corner.tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+  .corner.tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+  .corner.bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+  .corner.br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+  @media(max-width: 600px) {
+    .story-block { gap: 1rem; }
+    .story-icon { width: 40px; height: 40px; font-size: 1.1rem; }
+    .story-content { padding-bottom: 2rem; }
+    .story-stat-divider { display: none; }
+    .story-stat { min-width: 45%; padding: 0.5rem; }
+    .story-video-frame { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/584125210709?text=Hola%20Ford%20Tech,%20quiero%20agendar%20un%20diagnóstico" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#autoridad" onclick="closeDrawer()">Por qué elegirnos</a>
+  <a href="#servicios" onclick="closeDrawer()">Servicios</a>
+  <a href="#vehiculos" onclick="closeDrawer()">Vehículos</a>
+  <a href="#proceso" onclick="closeDrawer()">Proceso</a>
+  <a href="#tecnologia" onclick="closeDrawer()">Tecnología</a>
+  <a href="https://wa.me/584125210709" class="nav-drawer-cta" target="_blank" rel="noopener">Agendar ahora</a>
+</div>
+
+<!-- Navbar -->
+<nav id="navbar">
+  <a href="#inicio" class="nav-logo"><img src="https://res.cloudinary.com/dvvuwigmy/image/upload/v1780357522/IMG_7164_jdwnq5_qdgmle.png" alt="Ford Tech" style="height: 58px; width: auto; object-fit: contain;"></a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#vehiculos">Vehículos</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#tecnologia">Tecnología</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/584125210709" class="nav-cta" target="_blank" rel="noopener">Agendar</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menú" onclick="toggleDrawer()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="inicio">
+  <!-- Video de fondo -->
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://res.cloudinary.com/dvvuwigmy/video/upload/so_0,q_auto:good,f_jpg/v1780357027/insta_video_92168_rq2gdf.jpg">
+    <!-- 480p para mobile (~1.5 Mbps) -->
+    <source media="(max-width: 768px)" src="https://res.cloudinary.com/dvvuwigmy/video/upload/q_auto:good,f_auto,vc_auto,w_854,h_480,c_fill,br_1500k/v1780357027/insta_video_92168_rq2gdf.mp4" type="video/mp4">
+    <!-- 720p para tablet -->
+    <source media="(max-width: 1280px)" src="https://res.cloudinary.com/dvvuwigmy/video/upload/q_auto:good,f_auto,vc_auto,w_1280,h_720,c_fill,br_2500k/v1780357027/insta_video_92168_rq2gdf.mp4" type="video/mp4">
+    <!-- 1080p para desktop -->
+    <source src="https://res.cloudinary.com/dvvuwigmy/video/upload/q_auto:good,f_auto,vc_auto,w_1920,h_1080,c_fill,br_4000k/v1780357027/insta_video_92168_rq2gdf.mp4" type="video/mp4">
+  </video>
+  <!-- Overlays encima del video -->
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-scan"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Centro Ford Especializado · Cabudare, Lara</div>
+    <h1 class="hero-title">
+      ESPECIALISTAS EN<br><span class="accent">VEHÍCULOS FORD</span>
+    </h1>
+    <p class="hero-subtitle">
+      Diagnóstico avanzado, mantenimiento especializado y tecnología de última generación para tu Ford.
+    </p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/584125210709?text=Hola,%20quiero%20agendar%20un%20diagnóstico" class="btn-primary" target="_blank" rel="noopener">
+        <span>Agendar Diagnóstico</span>
+      </a>
+      <a href="https://wa.me/584125210709" class="btn-secondary" target="_blank" rel="noopener">
+        Contactar por WhatsApp
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">+1000</span>
+        <span class="hero-stat-label">Vehículos Atendidos</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">100%</span>
+        <span class="hero-stat-label">Ford Especializado</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">24HS</span>
+        <span class="hero-stat-label">Respuesta Rápida</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">LARA</span>
+        <span class="hero-stat-label">Cabudare, Venezuela</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Authority -->
+<section class="authority" id="autoridad">
+  <div class="container">
+
+    <!-- Header centrado -->
+    <div style="text-align: center; max-width: 780px; margin: 0 auto 4rem;" class="reveal">
+      <span class="section-label">Por qué elegirnos</span>
+      <h2 class="section-title">Una Historia de<br><span class="accent">Pasión por Ford</span></h2>
+      <div class="divider" style="margin: 1.5rem auto;"></div>
+    </div>
+
+    <!-- Story timeline -->
+    <div class="story-timeline reveal">
+
+      <div class="story-block">
+        <div class="story-icon-wrap">
+          <div class="story-icon">🔧</div>
+          <div class="story-line"></div>
+        </div>
+        <div class="story-content">
+          <span class="story-tag">El Origen</span>
+          <h3>Nació de la necesidad real</h3>
+          <p>Hace años, en Cabudare, los propietarios de Ford tenían un problema: ningún taller general los entendía de verdad. Llevaban su camioneta, su Explorer, su Ranger, y se iban con más dudas que respuestas. Ford Tech nació para cambiar eso — para ser el lugar donde tu Ford finalmente encuentra a alguien que sabe exactamente lo que necesita.</p>
+        </div>
+      </div>
+
+      <div class="story-block">
+        <div class="story-icon-wrap">
+          <div class="story-icon">💻</div>
+          <div class="story-line"></div>
+        </div>
+        <div class="story-content">
+          <span class="story-tag">La Especialización</span>
+          <h3>Solo Ford. Sin excepciones.</h3>
+          <p>Tomamos una decisión que pocos se atreven a tomar: hacer solo una cosa, pero hacerla mejor que nadie. Mientras otros talleres atienden cualquier marca, nosotros invertimos cada peso, cada hora de capacitación y cada herramienta en dominar la ingeniería Ford desde adentro. El resultado: diagnósticos precisos en el primer intento, sin vueltas, sin improvisaciones.</p>
+        </div>
+      </div>
+
+      <div class="story-block">
+        <div class="story-icon-wrap">
+          <div class="story-icon">🏆</div>
+          <div class="story-line"></div>
+        </div>
+        <div class="story-content">
+          <span class="story-tag">La Reputación</span>
+          <h3>Más de 1.000 Ford atendidos</h3>
+          <p>Con el tiempo, la palabra se corrió sola. Propietarios de toda la región de Lara comenzaron a traernos sus Ford con la confianza de quien ya sabe lo que va a encontrar: trabajo serio, presupuesto transparente, y un equipo que trata tu vehículo como si fuera propio. Más de mil vehículos atendidos avalan lo que decimos.</p>
+        </div>
+      </div>
+
+      <div class="story-block">
+        <div class="story-icon-wrap">
+          <div class="story-icon">🚀</div>
+          <div class="story-line story-line-last"></div>
+        </div>
+        <div class="story-content">
+          <span class="story-tag">Hoy</span>
+          <h3>Tecnología de taller de primer nivel</h3>
+          <p>Hoy Ford Tech cuenta con el escáner oficial Ford IDS/FDRS, herramientas especializadas de la marca y un equipo técnico en constante actualización. No somos un taller más en Cabudare — somos el centro de referencia Ford en el estado Lara. Y seguimos creciendo, porque tu Ford lo merece.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats row -->
+    <div class="story-stats reveal">
+      <div class="story-stat">
+        <span class="story-stat-num">+1000</span>
+        <span class="story-stat-label">Vehículos Atendidos</span>
+      </div>
+      <div class="story-stat-divider"></div>
+      <div class="story-stat">
+        <span class="story-stat-num">100%</span>
+        <span class="story-stat-label">Especialización Ford</span>
+      </div>
+      <div class="story-stat-divider"></div>
+      <div class="story-stat">
+        <span class="story-stat-num">99%</span>
+        <span class="story-stat-label">Satisfacción del Cliente</span>
+      </div>
+      <div class="story-stat-divider"></div>
+      <div class="story-stat">
+        <span class="story-stat-num">LARA</span>
+        <span class="story-stat-label">Centro de Referencia Ford</span>
+      </div>
+    </div>
+
+    <!-- Video showcase -->
+    <div class="story-video-wrap reveal">
+      <div class="story-video-label">
+        <span class="story-video-dot"></span>
+        <span>FORD TECH EN ACCIÓN · CABUDARE, LARA</span>
+      </div>
+      <div class="story-video-frame">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="https://res.cloudinary.com/dvvuwigmy/video/upload/so_0,q_auto:good,f_jpg/v1780356030/insta_video_92168_ereeym.jpg"
+          style="width: 100%; height: 100%; object-fit: cover; display: block;"
+        >
+          <source media="(max-width: 768px)" src="https://res.cloudinary.com/dvvuwigmy/video/upload/q_auto:good,f_auto,vc_auto,w_480,h_854,c_fill,br_1200k/v1780356030/insta_video_92168_ereeym.mp4" type="video/mp4">
+          <source src="https://res.cloudinary.com/dvvuwigmy/video/upload/q_auto:good,f_auto,vc_auto,w_720,h_1280,c_fill,br_2200k/v1780356030/insta_video_92168_ereeym.mp4" type="video/mp4">
+        </video>
+        <div class="story-video-overlay"></div>
+        <div class="story-video-corners">
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-heading); letter-spacing: 2px; text-transform: uppercase; margin-top: 1.2rem;">
+        Esto es lo que hacemos todos los días — con precisión, con herramientas Ford y con pasión.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-label">Nuestros Servicios</span>
+      <h2 class="section-title">Servicios <span class="accent">Especializados</span><br>Exclusivos Ford</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">💻</div>
+        <h3>Diagnóstico Computarizado</h3>
+        <p>Escaneo profesional y detección precisa de fallas con equipos Ford especializados. Lectura de todos los módulos del vehículo.</p>
+        <span class="service-tag">Tecnología Avanzada</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <div class="service-icon">🔧</div>
+        <h3>Mecánica Especializada</h3>
+        <p>Reparaciones enfocadas exclusivamente en vehículos Ford. Conocimiento profundo de cada sistema mecánico.</p>
+        <span class="service-tag">Solo Ford</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <div class="service-icon">🛡️</div>
+        <h3>Mantenimiento Preventivo</h3>
+        <p>Servicios diseñados para prolongar la vida útil de tu Ford siguiendo los protocolos específicos de la marca.</p>
+        <span class="service-tag">Protección Total</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-icon">⚡</div>
+        <h3>Sistema Eléctrico</h3>
+        <p>Diagnóstico y reparación avanzada del sistema eléctrico y electrónico de todos los modelos Ford.</p>
+        <span class="service-tag">Alta Tensión</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div>
+        <div class="service-icon">🎯</div>
+        <h3>Suspensión y Tren Delantero</h3>
+        <p>Corrección de fallas y optimización del manejo para una conducción precisa y segura en tu Ford.</p>
+        <span class="service-tag">Precisión Ford</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">06</div>
+        <div class="service-icon">🔍</div>
+        <h3>Revisión Integral</h3>
+        <p>Inspección completa antes de viajes largos o compra de vehículos Ford usados. Evaluación de 360°.</p>
+        <span class="service-tag">Inspección Total</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vehicles -->
+<section class="vehicles" id="vehiculos">
+  <div class="container">
+    <div class="vehicles-header reveal">
+      <span class="section-label">Toda la Familia Ford</span>
+      <h2 class="section-title">Si es <span class="accent">Ford</span>,<br>Lo Atendemos.</h2>
+      <div class="divider"></div>
+      <p class="section-desc" style="margin: 0 auto 2.5rem; text-align: center; max-width: 700px;">
+        Cubrimos <strong style="color: var(--text-primary);">toda la gama Ford sin excepción</strong>: vehículos particulares, camionetas, SUVs, utilitarios y carga pesada. Desde el EcoSport hasta el F-MAX — si lleva el óvalo azul, es nuestro territorio.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-bottom: 3rem;" class="reveal">
+      <div style="background: rgba(0,87,216,0.08); border: 1px solid var(--ford-blue); padding: 1.5rem; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);">
+        <div style="font-size: 1.8rem; margin-bottom: 0.6rem;">🚗</div>
+        <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; color: var(--ford-blue-glow); margin-bottom: 0.5rem;">Vehículos</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.7;">Fiesta · Focus · Fusion · Mustang · Mondeo · Ka · EcoSport · Escape · Explorer · Edge · Bronco · Expedition · Territory</div>
+      </div>
+      <div style="background: rgba(0,87,216,0.08); border: 1px solid var(--ford-blue); padding: 1.5rem; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);">
+        <div style="font-size: 1.8rem; margin-bottom: 0.6rem;">🛻</div>
+        <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; color: var(--ford-blue-glow); margin-bottom: 0.5rem;">Camionetas</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.7;">Ranger · F-150 · F-150 Raptor · F-150 Lightning · Maverick · Lobo · Todos los modelos F-Series</div>
+      </div>
+      <div style="background: rgba(0,87,216,0.08); border: 1px solid var(--ford-blue); padding: 1.5rem; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);">
+        <div style="font-size: 1.8rem; margin-bottom: 0.6rem;">🚛</div>
+        <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; color: var(--ford-blue-glow); margin-bottom: 0.5rem;">Carga Pesada</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.7;">F-250 · F-350 · F-450 · F-MAX · Transit · Transit Custom · Cargo · Super Duty · Series completas</div>
+      </div>
+    </div>
+
+    <div class="vehicles-grid">
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🚗</span>
+        <div class="vehicle-name">Ford Mustang</div>
+        <div class="vehicle-tag">Performance · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🚙</span>
+        <div class="vehicle-name">Ford Explorer</div>
+        <div class="vehicle-tag">SUV · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🚘</span>
+        <div class="vehicle-name">Ford Ecosport</div>
+        <div class="vehicle-tag">Compacto · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🚐</span>
+        <div class="vehicle-name">Ford Expedition</div>
+        <div class="vehicle-tag">SUV Full · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🛻</span>
+        <div class="vehicle-name">Ford Ranger</div>
+        <div class="vehicle-tag">Pickup · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🛻</span>
+        <div class="vehicle-name">Ford F-150 / Raptor</div>
+        <div class="vehicle-tag">Pickup Premium · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🚛</span>
+        <div class="vehicle-name">Ford F-250 / F-350</div>
+        <div class="vehicle-tag">Super Duty · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🚐</span>
+        <div class="vehicle-name">Ford Transit</div>
+        <div class="vehicle-tag">Utilitario · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🚙</span>
+        <div class="vehicle-name">Ford Bronco</div>
+        <div class="vehicle-tag">Off-Road · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🚗</span>
+        <div class="vehicle-name">Ford Focus / Fusion</div>
+        <div class="vehicle-tag">Sedán · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal">
+        <span class="vehicle-emoji">🚗</span>
+        <div class="vehicle-name">Ford Escape / Edge</div>
+        <div class="vehicle-tag">Crossover · Especializado</div>
+      </div>
+      <div class="vehicle-card reveal" style="background: rgba(0,87,216,0.1); border-color: var(--ford-blue);">
+        <span class="vehicle-emoji">🔵</span>
+        <div class="vehicle-name" style="color: var(--ford-blue-glow);">¿Tu modelo?</div>
+        <div class="vehicle-tag">Si es Ford, lo atendemos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="proceso">
+  <div class="container">
+    <div class="process-header reveal">
+      <span class="section-label">Nuestro Proceso</span>
+      <h2 class="section-title">Cómo <span class="accent">Trabajamos</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="process-timeline">
+      <div class="process-step reveal">
+        <div class="process-content">
+          <h3>Recepción y Evaluación</h3>
+          <p>Recibimos tu Ford y realizamos una evaluación visual inicial. Documentamos el estado del vehículo y escuchamos el historial del problema.</p>
+        </div>
+        <div class="process-num">01</div>
+        <div class="process-placeholder"></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-placeholder"></div>
+        <div class="process-num">02</div>
+        <div class="process-content">
+          <h3>Diagnóstico Especializado</h3>
+          <p>Conectamos los escáneres profesionales Ford y realizamos un diagnóstico computarizado completo. Lectura de todos los módulos y códigos de falla.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-content">
+          <h3>Presupuesto Transparente</h3>
+          <p>Te presentamos un presupuesto detallado y transparente antes de comenzar cualquier trabajo. Sin sorpresas ni cargos ocultos.</p>
+        </div>
+        <div class="process-num">03</div>
+        <div class="process-placeholder"></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-placeholder"></div>
+        <div class="process-num">04</div>
+        <div class="process-content">
+          <h3>Reparación Profesional</h3>
+          <p>Ejecutamos la reparación con herramientas especializadas Ford y repuestos de calidad, siguiendo los protocolos técnicos de la marca.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-content">
+          <h3>Entrega y Garantía</h3>
+          <p>Verificamos el trabajo realizado y entregamos tu Ford con garantía respaldada. Te explicamos todo lo que se hizo y las recomendaciones futuras.</p>
+        </div>
+        <div class="process-num">05</div>
+        <div class="process-placeholder"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technology -->
+<section class="technology" id="tecnologia">
+  <div class="container">
+    <div class="tech-grid">
+      <div class="reveal">
+        <span class="section-label">Equipamiento</span>
+        <h2 class="section-title">Tecnología de<br><span class="accent">Última</span><br>Generación</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Utilizamos herramientas avanzadas para detectar problemas con precisión y ofrecer soluciones más rápidas y efectivas.
+        </p>
+        <div class="tech-features">
+          <div class="tech-item">
+            <div class="tech-item-dot"></div>
+            <div>
+              <h4>Escáner Ford IDS/FDRS</h4>
+              <p>Sistema de diagnóstico oficial compatible con todos los modelos Ford modernos.</p>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-dot"></div>
+            <div>
+              <h4>Diagnóstico Digital Multi-Módulo</h4>
+              <p>Lectura simultánea de todos los módulos electrónicos del vehículo en tiempo real.</p>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-dot"></div>
+            <div>
+              <h4>Herramientas Especializadas Ford</h4>
+              <p>Equipamiento diseñado específicamente para la marca, sin improvisaciones.</p>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-dot"></div>
+            <div>
+              <h4>Actualización de Software</h4>
+              <p>Capacidad de actualizar y programar módulos de control del vehículo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-visual reveal">
+        <div class="tech-panel">
+          <div class="tech-panel-label">Sistema de Diagnóstico Ford</div>
+          <div class="tech-status-row">
+            <span class="tech-status-name">Motor · PCM</span>
+            <span class="tech-status-ok">Online</span>
+          </div>
+          <div class="tech-status-row">
+            <span class="tech-status-name">Transmisión · TCM</span>
+            <span class="tech-status-ok">Online</span>
+          </div>
+          <div class="tech-status-row">
+            <span class="tech-status-name">ABS · Anti-Bloqueo</span>
+            <span class="tech-status-ok">Online</span>
+          </div>
+          <div class="tech-status-row">
+            <span class="tech-status-name">Airbag · RCM</span>
+            <span class="tech-status-ok">Online</span>
+          </div>
+          <div class="tech-status-row">
+            <span class="tech-status-name">Sistema de Dirección</span>
+            <span class="tech-status-ok">Online</span>
+          </div>
+        </div>
+        <div class="tech-panel">
+          <div class="tech-panel-label">Estado del Vehículo</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+            <div style="text-align: center; padding: 0.8rem; background: rgba(0,87,216,0.06); border: 1px solid rgba(0,87,216,0.15);">
+              <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--ford-blue-glow);">98°C</div>
+              <div style="font-size: 0.65rem; color: var(--text-muted); font-family: var(--font-heading); letter-spacing: 1px; text-transform: uppercase; margin-top: 0.2rem;">Temperatura Motor</div>
+            </div>
+            <div style="text-align: center; padding: 0.8rem; background: rgba(0,87,216,0.06); border: 1px solid rgba(0,87,216,0.15);">
+              <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: #00c853;">14.2V</div>
+              <div style="font-size: 0.65rem; color: var(--text-muted); font-family: var(--font-heading); letter-spacing: 1px; text-transform: uppercase; margin-top: 0.2rem;">Voltaje Batería</div>
+            </div>
+            <div style="text-align: center; padding: 0.8rem; background: rgba(0,87,216,0.06); border: 1px solid rgba(0,87,216,0.15);">
+              <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--ford-blue-glow);">P0000</div>
+              <div style="font-size: 0.65rem; color: var(--text-muted); font-family: var(--font-heading); letter-spacing: 1px; text-transform: uppercase; margin-top: 0.2rem;">Códigos de Falla</div>
+            </div>
+            <div style="text-align: center; padding: 0.8rem; background: rgba(0,87,216,0.06); border: 1px solid rgba(0,87,216,0.15);">
+              <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: #00c853;">OK</div>
+              <div style="font-size: 0.65rem; color: var(--text-muted); font-family: var(--font-heading); letter-spacing: 1px; text-transform: uppercase; margin-top: 0.2rem;">Estado General</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <span class="section-label">Lo Que Dicen</span>
+      <h2 class="section-title">Clientes <span class="accent">Satisfechos</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Por fin encontré un taller que realmente entiende mi Ford. Diagnóstico exacto desde el primer momento, sin rodeos ni pérdida de tiempo."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">CR</div>
+          <div>
+            <div class="author-name">Carlos R.</div>
+            <div class="author-vehicle">Ford Ranger · Barquisimeto</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Diagnóstico rápido y solución definitiva. Llevé mi Explorer a dos talleres antes y ninguno dio con el problema. Ford Tech lo resolvió en el día."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MV</div>
+          <div>
+            <div class="author-name">María V.</div>
+            <div class="author-vehicle">Ford Explorer · Cabudare</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Excelente atención y profesionalismo. Se nota que saben exactamente qué están haciendo. Mi F-150 quedó como nuevo. Los recomiendo al 100%."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JM</div>
+          <div>
+            <div class="author-name">José M.</div>
+            <div class="author-vehicle">Ford F-150 · Lara</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <span class="section-label">Nuestro Trabajo</span>
+      <h2 class="section-title">Galería <span class="accent">Ford Tech</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-grid reveal">
+
+      <div class="gallery-item large">
+        <img src="https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356007/IMG_7173_q6xydh.jpg" alt="Ford Tech taller" class="gallery-photo">
+        <div class="gallery-overlay">
+          <div class="gallery-content">
+            <h4>Taller Ford Tech</h4>
+            <p>Servicio Especializado</p>
+          </div>
+        </div>
+        <div class="gallery-label">Taller · Cabudare</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356184/IMG_7167_twkhct.png" alt="Ford Tech diagnóstico" class="gallery-photo">
+        <div class="gallery-overlay">
+          <div class="gallery-content">
+            <h4>Diagnóstico</h4>
+            <p>Escáner IDS</p>
+          </div>
+        </div>
+        <div class="gallery-label">Diagnóstico</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356186/IMG_7166_my6cek.png" alt="Ford Tech mecánica" class="gallery-photo">
+        <div class="gallery-overlay">
+          <div class="gallery-content">
+            <h4>Mecánica</h4>
+            <p>Especializada Ford</p>
+          </div>
+        </div>
+        <div class="gallery-label">Mecánica</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356002/IMG_7174_fu4a4v.jpg" alt="Ford Tech proceso" class="gallery-photo">
+        <div class="gallery-overlay">
+          <div class="gallery-content">
+            <h4>Proceso</h4>
+            <p>Trabajo Profesional</p>
+          </div>
+        </div>
+        <div class="gallery-label">Proceso</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356002/IMG_7171_opgxkk.jpg" alt="Ford Tech servicio" class="gallery-photo">
+        <div class="gallery-overlay">
+          <div class="gallery-content">
+            <h4>Servicio</h4>
+            <p>Exclusivo Ford</p>
+          </div>
+        </div>
+        <div class="gallery-label">Servicio</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvvuwigmy/image/upload/v1780356284/IMG_7165_jfcoff.png" alt="Ford Tech equipo" class="gallery-photo">
+        <div class="gallery-overlay">
+          <div class="gallery-content">
+            <h4>Equipo</h4>
+            <p>Ford Tech Lara</p>
+          </div>
+        </div>
+        <div class="gallery-label">Equipo</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contacto">
+  <div class="cta-lines">
+    <div class="cta-line"></div>
+    <div style="width: 3rem"></div>
+    <div class="cta-line cta-line-r"></div>
+  </div>
+  <div class="cta-inner reveal">
+    <span class="section-label">¿Listo para el Mejor Servicio?</span>
+    <h2 class="section-title">Tu Ford Merece<br><span class="accent">Especialistas.</span></h2>
+    <p class="section-desc">
+      Agenda tu diagnóstico hoy mismo y deja tu vehículo en manos de expertos exclusivos Ford en Cabudare, Lara.
+    </p>
+    <a href="https://wa.me/584125210709?text=Hola%20Ford%20Tech,%20quiero%20agendar%20un%20diagnóstico%20para%20mi%20Ford" class="cta-btn-large" target="_blank" rel="noopener">
+      <span>Agendar por WhatsApp</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#inicio" class="footer-logo"><img src="https://res.cloudinary.com/dvvuwigmy/image/upload/v1780357522/IMG_7164_jdwnq5_qdgmle.png" alt="Ford Tech" style="height: 44px; width: auto; object-fit: contain;"></a>
+      <p class="footer-desc">
+        Especialistas exclusivos en vehículos Ford. El centro de servicio premium para tu Ford en Cabudare, Estado Lara, Venezuela.
+      </p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/fordtech.ve" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/584125210709" class="footer-social" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="#servicios">Diagnóstico Computarizado</a></li>
+        <li><a href="#servicios">Mecánica Especializada</a></li>
+        <li><a href="#servicios">Mantenimiento Preventivo</a></li>
+        <li><a href="#servicios">Sistema Eléctrico</a></li>
+        <li><a href="#servicios">Suspensión</a></li>
+        <li><a href="#servicios">Revisión Integral</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Vehículos</h5>
+      <ul>
+        <li><span>Ford Ranger</span></li>
+        <li><span>Ford Explorer</span></li>
+        <li><span>Ford F-150</span></li>
+        <li><span>Ford Mustang</span></li>
+        <li><span>Ford Ecosport</span></li>
+        <li><span>Ford Bronco</span></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><span>📍 Cabudare, Estado Lara</span></li>
+        <li><span>🇻🇪 Venezuela</span></li>
+        <li><a href="https://wa.me/584125210709">💬 WhatsApp</a></li>
+        <li><a href="https://instagram.com/fordtech.ve">📸 @fordtech.ve</a></li>
+        <li><span>🕐 Lun–Vie: 8am–6pm</span></li>
+        <li><span>🕐 Sáb: 8am–2pm</span></li>
+      </ul>
+      <div style="margin-top:1.2rem;">
+        <a href="https://maps.app.goo.gl/xsRQBSpunDG8oc298" target="_blank" rel="noopener" style="display:block; border:1px solid var(--border); overflow:hidden; transition: border-color 0.3s;" onmouseover="this.style.borderColor='var(--ford-blue-glow)'" onmouseout="this.style.borderColor='var(--border)'">
+          <iframe src="https://maps.google.com/maps?q=Cabudare,+Estado+Lara,+Venezuela&z=14&output=embed" width="100%" height="130" style="border:0; display:block; filter: grayscale(100%) invert(92%) contrast(83%) hue-rotate(180deg); opacity:0.85;" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Ford Tech · Cabudare, Estado Lara, Venezuela · Todos los derechos reservados.</div>
+    <div class="footer-tag">LOS REYES DEL SERVICIO FORD</div>
+  </div>
+</footer>
+
+<script>
+  // Hero video fade-in
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    const showVideo = () => heroVideo.classList.add('loaded');
+    if (heroVideo.readyState >= 3) { showVideo(); }
+    else { heroVideo.addEventListener('canplay', showVideo, { once: true }); }
+  }
+
+  // Custom cursor – desktop only
+  const isMobile = () => window.innerWidth <= 768;
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  if (!isMobile()) {
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top = my + 'px';
+    });
+    function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.width = '14px'; cursor.style.height = '14px';
+        ring.style.width = '46px'; ring.style.height = '46px';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.width = '8px'; cursor.style.height = '8px';
+        ring.style.width = '30px'; ring.style.height = '30px';
+      });
+    });
+  }
+
+  // Hamburger / drawer
+  const drawer = document.getElementById('navDrawer');
+  const hamburger = document.getElementById('hamburger');
+  function toggleDrawer() {
+    const open = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    drawer.style.display = open ? 'flex' : 'none';
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) requestAnimationFrame(() => drawer.style.opacity = '1');
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    hamburger.classList.remove('open');
+    drawer.style.display = 'none';
+    drawer.style.opacity = '0';
+    document.body.style.overflow = '';
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Navbar scroll — hide on scroll down (mobile), show on scroll up
+  let lastScrollY = 0;
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    const scrollY = window.scrollY;
+    const scrolled = scrollY > 50;
+    const mobile = isMobile();
+
+    // Background / padding
+    nav.style.background = scrolled ? 'rgba(5, 8, 16, 0.97)' : 'rgba(5, 8, 16, 0.85)';
+    nav.style.padding = scrolled
+      ? (mobile ? '0.6rem 1.2rem' : '0.7rem 2rem')
+      : (mobile ? '0.85rem 1.2rem' : '1rem 2rem');
+
+    // Hide/show on mobile only
+    if (mobile) {
+      const goingDown = scrollY > lastScrollY && scrollY > 80;
+      nav.style.transform = goingDown ? 'translateY(-110%)' : 'translateY(0)';
+    } else {
+      nav.style.transform = 'translateY(0)';
+    }
+
+    lastScrollY = scrollY;
+  }, { passive: true });
+</script>
+</body>
+</html>
