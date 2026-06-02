@@ -1771,6 +1771,82 @@
     .story-stat { min-width: 45%; padding: 0.5rem; }
     .story-video-frame { max-width: 100%; }
   }
+
+  /* Play button sobre thumbnail */
+  .story-video-thumb { cursor: pointer; }
+  .story-video-thumb:hover .video-play-btn {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--ford-blue-glow);
+    box-shadow: 0 0 40px rgba(26, 110, 255, 0.7);
+  }
+  .video-play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px; height: 68px;
+    background: rgba(0, 52, 153, 0.85);
+    border: 2px solid var(--ford-blue-glow);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 3;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 25px rgba(26, 110, 255, 0.45);
+  }
+  .video-play-btn svg {
+    width: 28px; height: 28px;
+    color: white;
+    margin-left: 4px;
+  }
+
+  /* Modal de video */
+  .video-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(5, 8, 16, 0.92);
+    backdrop-filter: blur(12px);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .video-modal.active { display: flex; }
+  .video-modal-inner {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .video-modal-frame {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #000;
+    border: 1px solid rgba(0, 87, 216, 0.4);
+    overflow: hidden;
+    position: relative;
+  }
+  .video-modal-close {
+    position: absolute;
+    top: -42px; right: 0;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+  .video-modal-close:hover {
+    background: rgba(26, 110, 255, 0.3);
+    border-color: var(--ford-blue-glow);
+    color: white;
+  }
 </style>
 </head>
 <body>
@@ -1956,20 +2032,19 @@
         <span class="story-video-dot"></span>
         <span>FORD TECH EN ACCIÓN · CABUDARE, LARA</span>
       </div>
-      <div class="story-video-frame">
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="https://res.cloudinary.com/dvvuwigmy/video/upload/so_0,q_auto:good,f_jpg/v1780356030/insta_video_92168_ereeym.jpg"
+      <div class="story-video-frame story-video-thumb" onclick="openVideoModal()" style="cursor: pointer;">
+        <img
+          src="https://res.cloudinary.com/dvvuwigmy/video/upload/so_0,q_auto:good,f_jpg/v1780356030/insta_video_92168_ereeym.jpg"
+          alt="Ford Tech en acción"
           style="width: 100%; height: 100%; object-fit: cover; display: block;"
         >
-          <source media="(max-width: 768px)" src="https://res.cloudinary.com/dvvuwigmy/video/upload/q_auto:good,f_auto,vc_auto,w_480,h_854,c_fill,br_1200k/v1780356030/insta_video_92168_ereeym.mp4" type="video/mp4">
-          <source src="https://res.cloudinary.com/dvvuwigmy/video/upload/q_auto:good,f_auto,vc_auto,w_720,h_1280,c_fill,br_2200k/v1780356030/insta_video_92168_ereeym.mp4" type="video/mp4">
-        </video>
         <div class="story-video-overlay"></div>
+        <!-- Play button -->
+        <div class="video-play-btn" aria-label="Reproducir video">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
         <div class="story-video-corners">
           <span class="corner tl"></span>
           <span class="corner tr"></span>
@@ -1980,6 +2055,25 @@
       <p style="text-align: center; font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-heading); letter-spacing: 2px; text-transform: uppercase; margin-top: 1.2rem;">
         Esto es lo que hacemos todos los días — con precisión, con herramientas Ford y con pasión.
       </p>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal" onclick="closeVideoModalOutside(event)">
+      <div class="video-modal-inner">
+        <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Cerrar video">&#x2715;</button>
+        <div class="video-modal-frame">
+          <video
+            id="modalVideo"
+            controls
+            playsinline
+            preload="none"
+            style="width: 100%; height: 100%; object-fit: contain; display: block; background: #000;"
+          >
+            <source media="(max-width: 768px)" src="https://res.cloudinary.com/dvvuwigmy/video/upload/q_auto:good,f_auto,vc_auto,w_480,h_854,c_fill,br_1200k/v1780356030/insta_video_92168_ereeym.mp4" type="video/mp4">
+            <source src="https://res.cloudinary.com/dvvuwigmy/video/upload/q_auto:good,f_auto,vc_auto,w_720,h_1280,c_fill,br_2200k/v1780356030/insta_video_92168_ereeym.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -2577,6 +2671,29 @@
 
     lastScrollY = scrollY;
   }, { passive: true });
+
+  // Video modal
+  function openVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    video.play();
+  }
+  function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    video.pause();
+    video.currentTime = 0;
+  }
+  function closeVideoModalOutside(e) {
+    if (e.target === document.getElementById('videoModal')) closeVideoModal();
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeVideoModal();
+  });
 </script>
 </body>
 </html>
